@@ -3,12 +3,12 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-family: "Gabarito", sans-serif;
 }
 body {
   background-color: #043F3B;
+  padding: 0;
+  margin: 0;
 }
 
 /* :root {
