@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import backgroundsvg from '../assets/ooorganize.svg'
+/* import backgroundsvg2 from '../assets/Moon.svg' */
+import wavessvg from '../assets/waves2.png'
 
 const questions = [
   {
@@ -78,37 +81,73 @@ function Quiz() {
   const handleAnswer = (value, feedback) => {
     setScore(score + value);
     setSelectedFeedback(feedback);
+  };
 
-    setTimeout(() => {
-      if (currentQuestion + 1 < questions.length) {
-        setCurrentQuestion(currentQuestion + 1);
-        setSelectedFeedback(null);
-      } else {
-        setFinished(true);
-      }
-    }, 2000);
+  const handleNextQuestion = () => {
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedFeedback(null);
+    } else {
+      setFinished(true);
+    }
   };
 
   return (
-    <div className='h-[100vh] flex justify-center items-center'>
-        <div className="p-10 max-w-2xl mx-auto bg-white shadow-lg rounded-xl text-center h-[50%]">
+    <div 
+      className='h-[100vh] flex justify-center items-center bg-[#178F89] relative'
+      style={{
+        backgroundImage: `url(${wavessvg})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'repeat'
+      }}
+    >
+        <div 
+          className="p-10 mx-auto backdrop-blur-3xl shadow-lg rounded-xl text-center h-[80%] w-[80%] flex justify-center items-center"
+          style={{
+            background: "rgba(255, 255, 255, 0.25)",
+            boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+            backdropFilter: "blur(11px)",
+            WebkitBackdropFilter: "blur(11px)", // Soporte para Safari
+            borderRadius: "10px",
+            border: "1px solid rgba(255, 255, 255, 0.18)"
+          }}
+        >
         {finished ? (
             <h2 className="text-2xl font-bold text-green-600">{getResult(score)}</h2>
         ) : (
-            <div>
-            <h2 className="text-xl font-bold mb-4">{questions[currentQuestion].question}</h2>
-            <div className="flex flex-col gap-4">
+            <div 
+              className='max-w-[600px]'
+            >
+            <h2 className="text-2xl font-bold mb-8">{questions[currentQuestion].question}</h2>
+            <div className=" text-xl flex flex-col gap-4">
                 {questions[currentQuestion].options.map((option, index) => (
                 <button
                     key={index}
-                    className="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-700"
+                    className="min-h-20 bg-white text-[#0B4F4C] p-8 rounded-lg shadow-lg hover:bg-[#106260] hover:text-white text-left ease-in-out transition-all cursor-pointer"
                     onClick={() => handleAnswer(option.value, option.feedback)}
                 >
                     {option.text}
                 </button>
                 ))}
             </div>
-            {selectedFeedback && <p className="mt-4 text-lg font-semibold text-gray-700">{selectedFeedback}</p>}
+            {selectedFeedback && 
+              <div
+                className='absolute bottom-0 left-0 h-full w-full flex justify-center items-center rounded-2xl flex-col'
+                style={{
+                  backgroundColor: 'rgba(0,0,0,0.5)'
+                }}
+              >
+                <p className="text-2xl mt-4 font-semibold text-black bg-white rounded-2xl shadow-2xl p-10">
+                  {selectedFeedback}
+                </p>
+                <button
+                  className="mt-4 bg-[#0B4F4C] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#106260] transition group relative inline-flex h-12 items-center justify-center overflow-hidden border border-neutral-200 font-medium duration-100 [box-shadow:5px_5px_rgb(82_82_82)] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_rgb(82_82_82)]"
+                  onClick={handleNextQuestion}
+                >
+                  Continuar
+                </button>
+              </div>
+            }
             </div>
         )}
         </div>

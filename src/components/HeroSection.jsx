@@ -42,7 +42,7 @@ function HeroSection() {
   
 
   return (
-    <div className='relative w-full h-[200vh] max-h-[1440px]'>
+    <div className='relative w-full h-[200vh]'>
       <div className={`relative flex justify-center items-center overflow-hidden h-screen max-h-[1100px] transition-all duration-500 ${isSticky ? 'sticky top-0' : 'relative'}`}>
         {/* FONDO */}
           <img src={bgPara} alt="background hero section" className='h-lvh max-h-[1000px]'/>
