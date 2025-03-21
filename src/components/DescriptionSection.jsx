@@ -4,14 +4,14 @@ import backgroundsvg from '../assets/ooorganize.svg'
 function DescriptionSection() {
   return (
     <div 
-        className='h-[100vh] bg-[#178F89] w-[100%] flex flex-col justify-evenly p-20 pb-0 text-[#CBFBF7] max-sm:pl-2 max-sm:pr-2'
+        className='h-[100vh] bg-[#178F89] w-[100%] flex flex-col justify-evenly p-20 pb-0 text-[#CBFBF7] max-sm:p-2'
         style={{
             backgroundImage: `url(${backgroundsvg})`,
             backgroundRepeat: 'repeat'
         }}
     >
         <div 
-            className='m-5 p-5 backdrop-blur-xs rounded-2xl shadow-2xl max-sm:m-2'
+            className='m-5 p-5 backdrop-blur-xs rounded-2xl shadow-2xl max-sm:m-2 max-sm:p-2'
             style={{
                 backgroundColor: 'rgba(203,251,247, 0.15)'
             }}
