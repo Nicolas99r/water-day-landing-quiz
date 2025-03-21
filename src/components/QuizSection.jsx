@@ -123,8 +123,7 @@ const getResult = (score) => {
       </div>
     </div>
   );
-  return "❌ Tsunami del Gasto (Nivel Emergencia): Si el agua tuviera sentimientos, estaría llorando por tu consumo. ¡Pero hay esperanza! Es momento de hacer un cambio radical. Tip ☝️🤓: Aplica la regla de los 5 minutos en la ducha y cierra la llave siempre que no la uses."
-  (
+  return (
     <div className='flex justify-center flex-col items-center'>
       <h2 className='text-[#83E8F1] font-extrabold text-6xl'>❌ Tsunami del Gasto</h2>
       <p className='text-lg text-[#10635F]'>(Nivel Emergencia)</p>
@@ -167,7 +166,7 @@ function Quiz() {
       }}
     >
         <div 
-          className="p-10 mx-auto backdrop-blur-3xl shadow-lg rounded-xl text-center h-[80%] w-[80%] flex justify-center items-center max-sm:p-4 max-sm:w-[95%]"
+          className="p-10 mx-auto backdrop-blur-3xl shadow-lg rounded-xl text-center h-[80%] w-[80%] flex justify-center items-center max-sm:p-4 max-sm:w-[95%] max-sm:h-[90%]"
           style={{
             background: "rgba(255, 255, 255, 0.25)",
             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
@@ -181,7 +180,7 @@ function Quiz() {
             <h2 className="text-2xl font-bold text-white">{getResult(score)}</h2>
         ) : (
             <div 
-              className='max-w-[600px]'
+              className='max-w-[600px] max-sm:h-[90%]'
             >
             <h2 className="text-2xl font-bold mb-8">{questions[currentQuestion].question}</h2>
             <div className=" text-xl flex flex-col gap-4">
