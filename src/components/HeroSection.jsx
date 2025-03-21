@@ -111,7 +111,7 @@ function HeroSection() {
             <img 
               src={leftfrontmount} 
               alt='right Back Mount' 
-              className='absolute max-h-[50vh] max-w-[1500px] bottom-[45%] left-[-10%]'
+              className='absolute max-h-[50vh] max-w-[1500px] bottom-[45%] left-[-10%] max-sm:left-[-100%]'
               style={{
                 transform: `translateX(${scrollProgress * -100}px)`
               }}
@@ -119,7 +119,7 @@ function HeroSection() {
             <img 
               src={leftfrontreflex} 
               alt='right Back Mount' 
-              className='absolute max-h-[50vh] max-w-[1500px] bottom-[22%] left-[-10%]'
+              className='absolute max-h-[50vh] max-w-[1500px] bottom-[22%] left-[-10%] max-sm:left-[-100%]'
               style={{
                 transform: `translateX(${scrollProgress * -100}px)`
               }}
@@ -130,7 +130,7 @@ function HeroSection() {
             <img 
               src={rightfrontmount} 
               alt='right front Mount reflex' 
-              className='absolute max-h-[50vh] max-w-[1500px] bottom-[20%] right-[-10%] scale-y-[-1] saturate-[20%] opacity-80 brightness-150'
+              className='absolute max-h-[50vh] max-w-[1500px] bottom-[20%] right-[-10%] scale-y-[-1] saturate-[20%] opacity-80 brightness-150 max-sm:right-[-100%]'
               style={{
                 transform: `translateX(${scrollProgress * 100}px)`
               }}
@@ -138,7 +138,7 @@ function HeroSection() {
             <img 
               src={rightfrontmount} 
               alt='right front Mount' 
-              className='absolute max-h-[50vh] max-w-[1500px] bottom-[45%] right-[-10%]'
+              className='absolute max-h-[50vh] max-w-[1500px] bottom-[45%] right-[-10%] max-sm:right-[-100%]'
               style={{
                 transform: `translateX(${scrollProgress * 100}px)`
               }}
@@ -149,7 +149,7 @@ function HeroSection() {
             <img 
               src={lefttrees} 
               alt='left trees'
-              className='absolute max-h-[50vh] max-w-[1410px] bottom-[25%] left-[-10%] scale-y-[-1] saturate-50 brightness-150 opacity-80'
+              className='absolute max-h-[50vh] max-w-[1410px] bottom-[25%] left-[-10%] scale-y-[-1] saturate-50 brightness-150 opacity-80 max-sm:left-[-50%]'
               style={{
                 transform: `translateX(${scrollProgress * -200}px)`
               }}
@@ -157,7 +157,7 @@ function HeroSection() {
             <img 
               src={lefttrees} 
               alt='left trees'
-              className='absolute max-h-[50vh] max-w-[1410px] bottom-[42%] left-[-10%]'
+              className='absolute max-h-[50vh] max-w-[1410px] bottom-[42%] left-[-10%] max-sm:left-[-50%]'
               style={{
                 transform: `translateX(${scrollProgress * -200}px)`
               }}
@@ -168,7 +168,7 @@ function HeroSection() {
             <img 
               src={righttrees} 
               alt='right trees'
-              className='absolute max-h-[50vh] max-w-[924px] bottom-[8%] right-[-10%] scale-y-[-1] saturate-50 brightness-150 opacity-80'
+              className='absolute max-h-[50vh] max-w-[924px] bottom-[8%] right-[-10%] scale-y-[-1] saturate-50 brightness-150 opacity-80 max-sm:right-[-150%]'
               style={{
                 transform: `translateX(${scrollProgress * 300}px)`
               }}
@@ -176,7 +176,7 @@ function HeroSection() {
             <img 
               src={righttrees} 
               alt='right trees reflex'
-              className='absolute max-h-[50vh] max-w-[924px] bottom-[30%] right-[-10%]'
+              className='absolute max-h-[50vh] max-w-[924px] bottom-[30%] right-[-10%] max-sm:right-[-150%]'
               style={{
                 transform: `translateX(${scrollProgress * 300}px)`
               }}

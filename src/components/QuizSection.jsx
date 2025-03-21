@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import backgroundsvg from '../assets/ooorganize.svg'
 /* import backgroundsvg2 from '../assets/Moon.svg' */
 import wavessvg from '../assets/waves2.png'
+/* import Confetti from "react-confetti";
+import { useWindowSize } from "react-use"; */
 
 const questions = [
   {
@@ -64,26 +66,75 @@ const questions = [
 ];
 
 const getResult = (score) => {
-  if (score >= 20) return /* "🌟 Maestro del Agua (Nivel Experto): Eres un verdadero guardián del agua. Cada gota cuenta y tú lo sabes. El planeta te aplaude por tus hábitos sostenibles. Tip: ¡Sigue siendo un ejemplo! Motiva a otros a cuidar el agua como tú." */(
-    <div>
-      <h2>Maestro del Agua</h2>
+  if (score >= 20) return (
+    (
+      <div className='flex justify-center flex-col items-center'>
+        <h2 className='text-[#83E8F1] font-extrabold text-6xl'>🌟 Maestro del Agua</h2>
+        <p className='text-lg text-[#10635F]'>(Nivel Experto)</p>
+        <p className='font-normal text-xl'>Eres un verdadero guardián del agua. Cada gota cuenta y tú lo sabes. El planeta te aplaude por tus hábitos sostenibles.</p>
+        <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
+          <p className='text-4xl'>Tip ☝️🤓</p>
+          <p className='font-normal'>¡Sigue siendo un ejemplo! Motiva a otros a cuidar el agua como tú.</p>
+        </div>
+      </div>
+    )
+  );
+  if (score >= 17) return (
+    <div className='flex justify-center flex-col items-center'>
+      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>💧 Defensor Azul</h2>
+      <p className='text-lg text-[#10635F]'>(Nivel Avanzado)</p>
+      <p className='font-normal text-xl'>Lo haces muy bien, pero siempre hay espacio para mejorar. Pequeñas acciones extra pueden llevarte al siguiente nivel.</p>
+      <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
+        <p className='text-4xl'>Tip ☝️🤓</p>
+        <p className='font-normal'>Prueba recolectar agua de lluvia o revisar fugas en casa.</p>
+      </div>
     </div>
   );
-  if (score >= 17) return "💧 Defensor Azul (Nivel Avanzado): Lo haces muy bien, pero siempre hay espacio para mejorar. Pequeñas acciones extra pueden llevarte al siguiente nivel. Tip: Prueba recolectar agua de lluvia o revisar fugas en casa.";
-  if (score >= 14) return /* "⚠️ Eco-Aprendiz (Nivel Intermedio): Tienes buenos hábitos, pero puedes hacer más. Tienes buenas intenciones, pero a veces el agua se te escapa de las manos. Con unos pequeños cambios, ¡puedes hacer una gran diferencia! Tip: Reduce tu tiempo en la ducha y usa menos agua al lavar los platos." */(
+  if (score >= 14) return (
     <div className='flex justify-center flex-col items-center'>
-      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>Eco-Aprendiz</h2>
+      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>⚠️ Eco-Aprendiz</h2>
       <p className='text-lg text-[#10635F]'>(Nivel Intermedio)</p>
       <p className='font-normal text-xl'>Tienes buenos hábitos, pero puedes hacer más. Tienes buenas intenciones, pero a veces el agua se te escapa de las manos. Con unos pequeños cambios, ¡puedes hacer una gran diferencia!</p>
       <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
-        <p className='text-4xl'>Tip</p>
+        <p className='text-4xl'>Tip ☝️🤓</p>
         <p className='font-normal'>Reduce tu tiempo en la ducha y usa menos agua al lavar los platos.</p>
       </div>
     </div>
   );
-  if (score >= 10) return "🚨 Usuario en Alerta (Nivel Básico): Sabes que el agua es importante, pero algunos de tus hábitos podrían estar desperdiciándola. ¡Es hora de mejorar! Tip: Cierra la llave mientras te cepillas los dientes y repara fugas de inmediato.";
-  if (score >= 6) return "🚨 UDesperdiciador en Rehabilitación (Nivel Crítico): Ups… parece que el agua fluye más rápido en tu casa que en un río. Pero nunca es tarde para mejorar y volverte un protector del agua. Tip: Empieza con un cambio pequeño, como lavar ropa solo cuando haya carga completa.";
-  return "❌ Tsunami del Gasto (Nivel Emergencia): Si el agua tuviera sentimientos, estaría llorando por tu consumo. ¡Pero hay esperanza! Es momento de hacer un cambio radical. Tip: Aplica la regla de los 5 minutos en la ducha y cierra la llave siempre que no la uses.";
+  if (score >= 10) return (
+    <div className='flex justify-center flex-col items-center'>
+      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>🚨 Usuario en Alerta</h2>
+      <p className='text-lg text-[#10635F]'>(Nivel Básico)</p>
+      <p className='font-normal text-xl'>Sabes que el agua es importante, pero algunos de tus hábitos podrían estar desperdiciándola. ¡Es hora de mejorar!</p>
+      <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
+        <p className='text-4xl'>Tip ☝️🤓</p>
+        <p className='font-normal'>Cierra la llave mientras te cepillas los dientes y repara fugas de inmediato.</p>
+      </div>
+    </div>
+  );
+  if (score >= 6) return (
+    <div className='flex justify-center flex-col items-center'>
+      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>🚨 Desperdiciador en Rehabilitación</h2>
+      <p className='text-lg text-[#10635F]'>(Nivel Crítico)</p>
+      <p className='font-normal text-xl'>Ups… parece que el agua fluye más rápido en tu casa que en un río. Pero nunca es tarde para mejorar y volverte un protector del agua.</p>
+      <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
+        <p className='text-4xl'>Tip ☝️🤓</p>
+        <p className='font-normal'>Empieza con un cambio pequeño, como lavar ropa solo cuando haya carga completa.</p>
+      </div>
+    </div>
+  );
+  return "❌ Tsunami del Gasto (Nivel Emergencia): Si el agua tuviera sentimientos, estaría llorando por tu consumo. ¡Pero hay esperanza! Es momento de hacer un cambio radical. Tip ☝️🤓: Aplica la regla de los 5 minutos en la ducha y cierra la llave siempre que no la uses."
+  (
+    <div className='flex justify-center flex-col items-center'>
+      <h2 className='text-[#83E8F1] font-extrabold text-6xl'>❌ Tsunami del Gasto</h2>
+      <p className='text-lg text-[#10635F]'>(Nivel Emergencia)</p>
+      <p className='font-normal text-xl'>Si el agua tuviera sentimientos, estaría llorando por tu consumo. ¡Pero hay esperanza! Es momento de hacer un cambio radical.</p>
+      <div className='m-8 bg-[] rounded-lg border-2 p-4 max-w-lg ease-in-out transition-all hover:scale-[1.05] hover:rotate-1 bg-[#CBFBF7] text-black border-amber-50'>
+        <p className='text-4xl'>Tip ☝️🤓</p>
+        <p className='font-normal'>Aplica la regla de los 5 minutos en la ducha y cierra la llave siempre que no la uses.</p>
+      </div>
+    </div>
+  );
 };
 
 function Quiz() {
@@ -116,7 +167,7 @@ function Quiz() {
       }}
     >
         <div 
-          className="p-10 mx-auto backdrop-blur-3xl shadow-lg rounded-xl text-center h-[80%] w-[80%] flex justify-center items-center"
+          className="p-10 mx-auto backdrop-blur-3xl shadow-lg rounded-xl text-center h-[80%] w-[80%] flex justify-center items-center max-sm:p-4 max-sm:w-[95%]"
           style={{
             background: "rgba(255, 255, 255, 0.25)",
             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
@@ -151,7 +202,7 @@ function Quiz() {
                   backgroundColor: 'rgba(0,0,0,0.5)'
                 }}
               >
-                <p className="text-2xl mt-4 font-semibold text-black bg-white rounded-2xl shadow-2xl p-10">
+                <p className="text-2xl mt-4 font-semibold text-black bg-white rounded-2xl shadow-2xl p-10 max-w-[500px] max-sm:max-w-[300px]">
                   {selectedFeedback}
                 </p>
                 <button
